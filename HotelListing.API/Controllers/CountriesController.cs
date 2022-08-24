@@ -30,8 +30,7 @@ namespace HotelListing.API.Controllers
         public async Task<ActionResult<IEnumerable<GetCountryDto>>> GetCountries()
         {
             var countries = await _countriesRepository.GetAllAsync();
-            var records = _mapper.Map<List<GetCountryDto>>(countries);
-            return records;
+            return _mapper.Map<List<GetCountryDto>>(countries);
         }
 
         // GET: api/Countries/5
